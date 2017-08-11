@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_variant_easy_edit_view_inherit" model="ir.ui.view">
+            <field name="name">product.product.view.form.easy.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_variant_easy_edit_view"/>
+            <field name="arch" type="xml">
+                <group name="weight" position="replace">
+                    <group name="weight" string="Weight &amp; Dimensions">
+                        <label for="display_weight"/>
+                        <div class="o_row">
+                            <field name="display_weight"/>
+                            <field name="display_weight_uom_id"/>
+                        </div>
+                        <label for="display_length" string="Dimensions"/>
+                        <div class="o_row">
+                            <span>L</span>
+                            <field name="display_length"/>
+                            <span>W</span>
+                            <field name="display_width"/>
+                            <span>H</span>
+                            <field name="display_height"/>
+                            <field name="display_dimensions_uom_id"/>
+                        </div>
+                        <label for="display_volume"/>
+                        <div class="o_row">
+                            <field name="display_volume"/>
+                            <field name="display_volume_uom_id"/>
+                        </div>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</odoo>

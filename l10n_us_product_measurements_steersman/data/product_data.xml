@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data noupdate="1">
+
+		<record id="decimal_stock_volume" model="decimal.precision">
+			<field name="name">Stock Volume</field>
+			<field name="digits">3</field>
+    	</record>
+		<record id="decimal_stock_dimensions" model="decimal.precision">
+			<field name="name">Stock Dimensions</field>
+			<field name="digits">2</field>
+    	</record>
+
+        <record id="product_uom_m3" model="product.uom">
+            <field name="name">m3</field>
+            <field name="category_id" ref="product.product_uom_categ_vol"/>
+            <field name="factor_inv">1000.0</field>
+            <field name="uom_type">bigger</field>
+        </record>
+        <record id="product_uom_ft3" model="product.uom">
+            <field name="name">ft3</field>
+            <field name="category_id" ref="product.product_uom_categ_vol"/>
+            <field name="factor_inv">28.3168</field>
+            <field name="uom_type">bigger</field>
+        </record>
+
+        <function model="product.product" name="_init_display_measurements"/>
+        <function model="product.template" name="_init_display_measurements"/>
+
+	</data>
+</odoo>

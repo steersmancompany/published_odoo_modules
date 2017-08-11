@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_template_property_form_inherit" model="ir.ui.view">
+            <field name="name">stock.view.template.property.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="stock.view_template_property_form"/>
+            <field name="arch" type="xml">
+                <group name="group_lots_and_weight" position="replace">
+                    <group name="group_lots_and_weight">
+                        <label for="display_weight" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                        <div class="o_row" name="weight" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                            <field name="display_weight"/>
+                            <field name="display_weight_uom_id"/>
+                        </div>
+                        <label help="Fuck" for="display_length" string="Dimensions" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                        <div class="o_row" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                            <span>L</span>
+                            <field name="display_length"/>
+                            <span>W</span>
+                            <field name="display_width"/>
+                            <span>H</span>
+                            <field name="display_height"/>
+                            <field name="display_dimensions_uom_id"/>
+                        </div>
+                        <label for="display_volume" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                        <div class="o_row" name="volume"
+                             attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
+                            <field name="display_volume"/>
+                            <field name="display_volume_uom_id"/>
+                        </div>
+                        <field name="tracking" widget="radio" attrs="{'invisible':[('type', 'in', ['service', 'digital'])]}" groups="stock.group_production_lot"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+
+    </data>
+</odoo>
