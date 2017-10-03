@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 {
 	'name': 'US/Imperial Product Measurements',
 	'summary': 'Maintain product weight, volume and dimensions in any UoM',
@@ -7,8 +8,8 @@
 	'website': 'https://steersman.works',
 	'depends': ['stock'],
 	'data': [
-		'views/product_template_views.xml',
-        'views/product_views.xml',
+        'views/product_template_views.xml',
+		'views/product_views.xml',
 		'data/product_data.xml'
     ],
     'images': ['static/description/banner.png'],

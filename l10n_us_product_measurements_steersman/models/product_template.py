@@ -9,16 +9,16 @@ class ProductTemplate(models.Model):
     _inherit = "product.template"
 
     # Modify existing weight and volume fields in default UoM
-    weight = fields.Float(string='Weight (Default UoM)', digits=dp.get_precision('Stock Weight'), groups="base.group_no_one",
+    weight = fields.Float(string='Weight (Default UoM)', digits=dp.get_precision('Stock Weight'),
                           compute='_compute_weight', store=True, help="Weight in Kilograms.")
-    volume = fields.Float(string='Volume (Default UoM)', digits=dp.get_precision('Stock Volume'), groups="base.group_no_one",
+    volume = fields.Float(string='Volume (Default UoM)', digits=dp.get_precision('Stock Volume'),
                           compute='_compute_volume', store=True, help="Volume in Cubic Meters.")
     # Add fields for dimensions in default UoM
-    length = fields.Float(string='Length (Default UoM)', digits=dp.get_precision('Stock Dimensions'), groups="base.group_no_one",
+    length = fields.Float(string='Length (Default UoM)', digits=dp.get_precision('Stock Dimensions'),
                           compute='_compute_length', store=True, help="Length in Centimeters.")
-    width = fields.Float(string='Width (Default UoM)', digits=dp.get_precision('Stock Dimensions'), groups="base.group_no_one",
+    width = fields.Float(string='Width (Default UoM)', digits=dp.get_precision('Stock Dimensions'),
                          compute='_compute_width', store=True, help="Width in Centimeters.")
-    height = fields.Float(string='Height (Default UoM)', digits=dp.get_precision('Stock Dimensions'), groups="base.group_no_one",
+    height = fields.Float(string='Height (Default UoM)', digits=dp.get_precision('Stock Dimensions'),
                           compute='_compute_height', store=True, help="Height in Centimeters.")
 
     @api.model
