@@ -14,7 +14,7 @@
                             <field name="display_weight"/>
                             <field name="display_weight_uom_id"/>
                         </div>
-                        <label help="Fuck" for="display_length" string="Dimensions" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
+                        <label for="display_length" string="Dimensions" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}"/>
                         <div class="o_row" attrs="{'invisible':['|', ('type', 'not in', ['product', 'consu']), ('product_variant_count', '&gt;', 1)]}">
                             <span>L</span>
                             <field name="display_length"/>
